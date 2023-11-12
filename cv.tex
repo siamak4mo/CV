@@ -6,6 +6,8 @@
 \documentclass{article}
 \usepackage{titling}
 \usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{tasks}
 \usepackage[margin=1.25in]{geometry}
 \usepackage{xepersian}
 %%
@@ -35,6 +37,9 @@
     \vspace{.5em} \lr{Email: {edu.siamak@gmail.com}}
   \end{center}
 }
+%%
+% tasks preferences
+\settasks{label= }
 
 
 \begin{document}
@@ -44,7 +49,16 @@
 
 \section{مشخصات عمومی}
 \subsection{شخصی}
-ها ها ها
+\begin{multicols}{2}
+  \begin{tasks}
+    \task کلید1: مقدار1
+    \task کلید2: مقدار2
+  \end{tasks}
+  \columnbreak
+  \begin{tasks}
+    \task کلید3: مقدار3
+  \end{tasks}
+\end{multicols}
 \subsection{تحصیلات}
 هههیچی
 \section{تخصصی}
