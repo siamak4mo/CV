@@ -1,0 +1,59 @@
+%------------------------------------%
+%  file: cv.tex                      %
+%  created at: 12 Nov 2023           %
+%  compilation: `xelatex cv.tex`     %
+%------------------------------------%
+\documentclass{article}
+\usepackage{titling}
+\usepackage{titlesec}
+\usepackage[margin=1.25in]{geometry}
+\usepackage{xepersian}
+%%
+% fonts
+\settextfont{Yas}
+\setdigitfont{Yas}
+\setlatintextfont{Noto Serif}
+%%
+% title format & spacing
+\titleformat{\section}[frame]
+{\Large}{}{.2em}{\filcenter\bfseries\lowercase}[]
+%
+\titleformat{\subsection}
+{\large\bfseries}{$\bullet$ }{0em}{}
+%
+\titleformat{\subsubsection}[runin]
+{\bfseries}{}{0em}{}[ ---]
+%
+\titlespacing{\subsection} {0em}{.25em}{1em}
+\titlespacing{\subsubsection} {0em}{.25em}{1em}
+%%
+% custom make title
+\renewcommand{\maketitle}{
+  \begin{center}
+    {\Huge \bfseries \thetitle}\\
+    \vspace{4em} \theauthor\\
+    \vspace{.5em} \latin{ Email:  edu.siamak@gmail.com }
+  \end{center}
+}
+
+
+\begin{document}
+\title{رزومه}
+\author{خودمممم}
+\maketitle
+
+\section{مشخصات عمومی}
+\subsection{شخصی}
+ها ها ها
+\subsection{تحصیلات}
+هههیچی
+\section{تخصصی}
+\subsection{زبان ها}
+\subsubsection{Compiled}
+\lr{C} - \lr{Golang} - \lr{java}
+\subsubsection{اسکریپتی}
+\lr{python} - \lr{bash/zsh}
+\subsubsection{Markup}
+\lr{Html} - \lr{\LaTeX} - \lr{markdown} - \lr{Rmarkdown}
+\subsection{علاقه ها}
+\end{document}
