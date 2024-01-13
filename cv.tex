@@ -32,12 +32,17 @@
 %%
 % line spacing
 \renewcommand{\baselinestretch}{1.2}
+% make email
+\newcommand{\email}[1]{\newcommand{\theemail}{#1}}
+\newcommand{\makeemail}{\href{mailto: {\theemail}}{\texttt{\theemail}}}
+% make telegram link
+\newcommand{\mktelegram}[1]{\href{https://t.me/#1}{\texttt{@#1}}}
 % custom make title
 \renewcommand{\maketitle}{
   \begin{center}
     {\Huge \bfseries \thetitle}\\
     \vspace{4em} \theauthor\\
-    \vspace{.5em} \lr{Email: {edu.siamak@gmail.com}}
+    \vspace{.5em} \lr{Email: \makeemail}
   \end{center}
 }
 % `key: value` command
@@ -55,6 +60,7 @@
 \begin{document}
 \title{رزومه}
 \author{سیامک آموزگار}
+\email{edu.siamak@gmail.com}
 \maketitle
 
 \section{مشخصات} %%%%%%%%%%%%%%%%%%%%%%%% section 1
@@ -69,10 +75,8 @@
   \columnbreak
   \begin{tasks}
     \task\kv{تماس}{\lr{(+98) 921-962-4341}}
-    \task\kv{ایمیل}{\href{mailto: edu.siamak@gmail.com}
-        {\texttt{edu.siamak@gmail.com}}}
-    \task\kv{تلگرام}{\href{https://t.me/siamak4mo}
-      {\texttt{@siamak4mo}}}
+    \task\kv{ایمیل}{\makeemail}
+    \task\kv{تلگرام}{\mktelegram{siamak4mo}}
     \task\kv{محل سکونت}{کرج}
   \end{tasks}
 \end{multicols}
