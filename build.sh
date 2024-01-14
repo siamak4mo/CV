@@ -18,15 +18,12 @@ else
     echo "configure"
 fi
 
-set -e
-
 check_font(){
     for _fnt in "Regular" "Italic" "Bold" "Bold Italic"; do
-        _f="$1:style=$_fnt"
-        echo -n "checking for $_f... "
-        if [ -z "$(fc-list | grep "$_f" -o)" ]; then
+        echo -n "checking for $1 ($_fnt)... "
+        if [ -z "$(fc-list :family="$1" | grep "$_fnt" -o)" ]; then
             echo "no"
-            echo "Error -- first install $1:$_fnt font" >&2
+            echo "Error -- first install '$1 ($_fnt)' font" >&2
             exit 1
         else
             echo "yes"
