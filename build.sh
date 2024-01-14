@@ -5,7 +5,7 @@
 SRC="cv.tex"
 DEP="xepersian geometry titling hyperref multicol titlesec tasks"
 _MAIN_FARSI_FONT="Yas"
-_MAIN_LATIN_FONT="Noto Serif"
+_MAIN_LATIN_FONT="EB Garamond"
 _cache_file=".build.cache"
 
 echo -n "checking for cache... "
