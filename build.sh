@@ -20,7 +20,7 @@ fi
 
 check_font(){
     for _fnt in "Regular" "Italic" "Bold" "Bold Italic"; do
-        echo -n "checking for $1 ($_fnt)... "
+        echo -n "checking for font $1 ($_fnt)... "
         if [ -z "$(fc-list :family="$1" | grep "$_fnt" -o)" ]; then
             echo "no"
             echo "Error -- first install '$1 ($_fnt)' font" >&2
