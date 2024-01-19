@@ -3,7 +3,7 @@
 # build script
 #
 SRC="cv.tex"
-DEP="xepersian geometry titling hyperref multicol titlesec tasks"
+DEP=$(sed -ne "s/.usepackage.*{\(.*\)}.*/\1/p" $SRC | tr ',' '\n')
 _MAIN_FARSI_FONT="Yas"
 _MAIN_LATIN_FONT="EB Garamond"
 _cache_file=".build.cache"
