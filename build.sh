@@ -4,8 +4,8 @@
 #
 SRC="cv.tex"
 DEP=$(sed -ne "s/.usepackage.*{\(.*\)}.*/\1/p" $SRC | tr ',' '\n')
-_MAIN_FARSI_FONT="Yas"
-_MAIN_LATIN_FONT="EB Garamond"
+_MAIN_FARSI_FONT=$(sed -ne "s/.settextfont{\(.*\)}/\1/p" $SRC)
+_MAIN_LATIN_FONT=$(sed -ne "s/.setlatintextfont{\(.*\)}/\1/p" $SRC)
 _cache_file=".build.cache"
 
 echo -n "checking for cache... "
