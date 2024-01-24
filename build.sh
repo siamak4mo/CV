@@ -75,7 +75,7 @@ for _dep in $DEP; do
 done
 
 # build
-echo "make cache..."
-echo $TEXCC >> $_cache_file
+echo -n "make cache..."
+echo $TEXCC > $_cache_file
 $Y
-$TEXCC $SRC
+compile
