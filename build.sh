@@ -1,6 +1,7 @@
 #!/bin/sh
 #
 # build script
+# run `IGNORE_FONT_ERR=1 ./build.sh` to ignore font not found errors
 #
 SRC="cv.tex"
 DEP=$(sed -ne "s/.usepackage.*{\(.*\)}.*/\1/p" $SRC | tr ',' '\n')
@@ -34,8 +35,10 @@ check_font(){
         echo -n "checking for font $1 ($_fnt)... "
         if [ -z "$(fc-list :family="$1" | grep "$_fnt" -o)" ]; then
             $N
-            echo "Error -- first install '$1 ($_fnt)' font" >&2
-            exit 1
+            if [ -z "$IGNORE_FONT_ERR" ]; then
+                echo "Error -- first install '$1 ($_fnt)' font" >&2
+                exit 1
+            fi
         else
             $Y
         fi
