@@ -11,13 +11,21 @@ _cache_file=".build.cache"
 Y="echo yes"
 N="echo no"
 
-echo -n "checking for cache... "
+compile(){
+    $TEXCC $SRC
+}
+
+# checking for cache
 if [ -s $_cache_file ]; then
-    $Y
-    $(cat $_cache_file) $SRC
+    TEXCC="$(cat $_cache_file)"
+    [ ! -s $TEXCC ] && unset TEXCC
+fi
+
+# compile or configure
+if [ -n "$TEXCC" ]; then
+    compile
     exit 0
 else
-    $N
     echo "configure"
 fi
 
