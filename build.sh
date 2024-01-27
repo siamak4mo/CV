@@ -3,7 +3,7 @@
 # build script
 # run `IGNORE_FONT_ERR=1 ./build.sh` to ignore font not found errors
 #
-SRC="cv.tex"
+[ -z "$1" ] && SRC="cv.tex" || SRC=$1
 DEP=$(sed -ne "s/.usepackage.*{\(.*\)}.*/\1/p" $SRC | tr ',' '\n')
 _MAIN_FARSI_FONT=$(sed -ne "s/.settextfont{\(.*\)}/\1/p" $SRC)
 _MAIN_LATIN_FONT=$(sed -ne "s/.setlatintextfont{\(.*\)}/\1/p" $SRC)
