@@ -68,6 +68,7 @@ for _dep in $DEP; do
     if [ -z "$_pp" ]; then
         $N
         echo "Error -- first install $_dep.sty" >&2
+        echo "required packages:" $DEP
         exit 1
     else
         $Y
